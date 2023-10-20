@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { Map } from '.'
 
-describe('Map', () => {
+describe('<Map />', () => {
   it('should render without any markers', () => {
     render(<Map />)
 
