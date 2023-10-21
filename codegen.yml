@@ -1,5 +1,5 @@
 overwrite: true
-schema: "https://api-ca-central-1.graphcms.com/v2/ckloflxosyl5b01xdg6jsb7ie/master"
+schema: "https://api-sa-east-1.hygraph.com/v2/clnywfmc805o101t40legeyeo/master"
 documents: "src/graphql/queries.ts"
 generates:
   src/graphql/generated/graphql.ts:
@@ -7,4 +7,5 @@ generates:
       - "typescript"
       - "typescript-operations"
       - add:
-          content: '/* eslint-disable */'
+          content: '/* eslint-disable prettier/prettier */'
+          content: '/* eslint-disable @typescript-eslint/no-explicit-any */'

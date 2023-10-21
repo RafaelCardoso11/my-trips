@@ -37,3 +37,7 @@ public/workbox-*.js
 storybook-static
 
 .vercel
+
+
+# generated codegen
+/src/graphql/generated
