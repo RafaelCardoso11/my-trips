@@ -3,7 +3,11 @@ import dynamic from 'next/dynamic'
 import { InfoOutline } from '@styled-icons/evaicons-outline'
 
 const Map = dynamic(
-  () => import('components/Map').then((module) => module.Map),
+  async () => {
+    const module = await import('components/Map')
+
+    return module.Map
+  },
   { ssr: false }
 )
 
