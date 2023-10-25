@@ -1,19 +1,8 @@
+import { GetPlacesQuery } from 'graphql/generated/graphql'
 import React from 'react'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
-type Place = {
-  id: number
-  name: string
-  slug: string
-  location: {
-    latitude: number
-    longitude: number
-  }
-}
-export type MapProps = {
-  places?: Place[]
-}
-export const Map: React.FC<MapProps> = ({ places }) => {
+export const Map: React.FC<GetPlacesQuery> = ({ places }) => {
   return (
     <MapContainer
       center={[0, 0]}
