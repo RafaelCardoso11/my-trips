@@ -25,8 +25,8 @@ export const GET_PAGE_BY_SLUG = gql`
   }
 `
 
-export const GET_SLUGS = gql`
-  query getSlugs($first: Int) {
+export const GET_SLUGS_PAGES = gql`
+  query getSlugsPages($first: Int) {
     pages(first: $first) {
       slug
     }
@@ -39,6 +39,33 @@ export const GET_PLACES = gql`
       id
       name
       slug
+      description {
+        html
+      }
+      location {
+        latitude
+        longitude
+      }
+      gallery {
+        id
+        url
+      }
+    }
+  }
+`
+export const GET_SLUGS_PLACES = gql`
+  query getSlugsPlaces($first: Int) {
+    places(first: $first) {
+      id
+      slug
+    }
+  }
+`
+export const GET_PLACE_BY_SLUG = gql`
+  query getPlaceBySlug($slug: String) {
+    place(where: { slug: $slug }) {
+      id
+      name
       description {
         html
       }
