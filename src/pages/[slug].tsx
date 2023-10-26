@@ -1,6 +1,6 @@
 import client from 'graphql/client'
 import { GetPageBySlugQuery, GetPagesQuery } from 'graphql/generated/graphql'
-import { GET_PAGE_BY_SLUG, GET_SLUGS } from 'graphql/queries'
+import { GET_PAGE_BY_SLUG, GET_SLUGS_PAGES } from 'graphql/queries'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 import { PageTemplate, PageTemplateProps } from 'templates/Pages'
@@ -15,7 +15,7 @@ export default function AboutPage({ heading, body }: PageTemplateProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { pages } = await client.request<GetPagesQuery>(GET_SLUGS, {
+  const { pages } = await client.request<GetPagesQuery>(GET_SLUGS_PAGES, {
     first: 3
   })
 
